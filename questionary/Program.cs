@@ -1,17 +1,33 @@
 ﻿using System;
 
 namespace questionary {
+
+    enum DaysOfWeek : byte
+    {
+        Monday, 
+        Tuesday, 
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday
+    }
+
     class Program {
         static void Main(string[] args) {
-            string MyName = "Jane";
-            byte MyAge = 27;
-            bool HaveIApet = true;
-            double MyShoeSize = 37.5;
 
-            Console.WriteLine("My name is " + MyName);
-            Console.WriteLine("MyAge " + MyAge);
-            Console.WriteLine("Do I have a pet? " + HaveIApet);
-            Console.WriteLine("My shoe size is " + MyShoeSize);
+            // как вас зовут, возраст, дату рождения.
+            Console.WriteLine("What is your name?");
+            var MyName = Console.ReadLine();
+            Console.WriteLine("How old are you?");
+            var MyAge = checked((byte)int.Parse(Console.ReadLine()));
+            Console.WriteLine("When was you born?");
+            var MyBirthday = Console.ReadLine();
+
+            Console.WriteLine("Hello {0}! You are still quite young with your {1}! You birthday is nice {2}!",
+                MyName, MyAge, MyBirthday);
+            Console.ReadKey();
+        
         }
     }
 }
